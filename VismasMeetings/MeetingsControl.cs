@@ -95,27 +95,27 @@ namespace VismasMeetings.Models
                 switch (categoryInput)
                 {
                     case 1:
-
                         meeting.category = "CodeMonkey";
                         Console.WriteLine("{0}\n", meeting.category);
+
                         break;
 
                     case 2:
-
                         meeting.category = "Hub";
                         Console.WriteLine("{0}\n", meeting.category);
+
                         break;
 
                     case 3:
-
                         meeting.category = "Short";
                         Console.WriteLine("{0}\n", meeting.category);
+
                         break;
 
                     case 4:
-
                         meeting.category = "TeamBuilding";
                         Console.WriteLine("{0}\n", meeting.category);
+
                         break;
                 }
 
@@ -125,15 +125,15 @@ namespace VismasMeetings.Models
                 {
 
                     case 1:
-
                         meeting.type = "Live";
                         Console.WriteLine("{0}\n", meeting.type);
+
                         break;
 
                     case 2:
-
                         meeting.type = "InPerson";
                         Console.WriteLine("{0} \n", meeting.type);
+
                         break;
                 }
 
@@ -152,6 +152,7 @@ namespace VismasMeetings.Models
                 File.WriteAllText("meets.json", save);
 
                 Console.WriteLine("Meeting added!\n");
+
                 break;
             }
         }
@@ -159,6 +160,7 @@ namespace VismasMeetings.Models
         public static void AddPersonToMeeting()
         {
             Console.Clear();
+
             Console.WriteLine("Enter description to add member to that meeting\n");
             string input = Console.ReadLine();
 
@@ -169,15 +171,15 @@ namespace VismasMeetings.Models
             if (selected != null)
             {
                 Console.WriteLine(
-                    "Members: {0}\n" +
+                    "Participants: {0}\n" +
                     "Responsible person: {1}\n" +
                     "Description: {2}\n" +
                     "Category: {3}\n" +
                     "Meeting type: {4}\n" +
                     "Start date {5}\n" +
                     "End date: {6}\n\n",
-                    selected.PrintMeeting(), selected.responsiblePerson, selected.description, selected.category, selected.type, selected.startDate, selected.endDate);
-
+                    selected.PrintMember(), selected.responsiblePerson, selected.description, selected.category, selected.type, selected.startDate, selected.endDate);
+                
                 Console.WriteLine("Add to this one? Y/n\n");
                 string userInput = Console.ReadLine();
                 if (userInput == "y" || userInput == "Y")
@@ -185,6 +187,12 @@ namespace VismasMeetings.Models
                     Console.WriteLine("Please enter member name: ");
 
                     string inputPerson = Console.ReadLine();
+
+                    if (selected.People.Contains(inputPerson))
+                    {
+                        Console.WriteLine("This person already added");
+                    }
+
                     selected.AddPersonToMeeting(inputPerson);
 
                     var save = JsonConvert.SerializeObject(Program.meets);
@@ -209,14 +217,14 @@ namespace VismasMeetings.Models
             if (selected != null)
             {
                 Console.WriteLine(
-                    "Members: {0}\n" +
+                    "Participants: {0}\n" +
                     "Responsible person: {1}\n" +
                     "Description: {2}\n" +
                     "Category: {3}\n" +
                     "Meeting type: {4}\n" +
                     "Start date: {5}\n" +
                     "End date: {6}\n\n",
-                    selected.PrintMeeting(), selected.responsiblePerson, selected.description, selected.category, selected.type, selected.startDate, selected.endDate);
+                    selected.PrintMember(), selected.responsiblePerson, selected.description, selected.category, selected.type, selected.startDate, selected.endDate);
 
                 Console.WriteLine("You sure? Y/n\n");
 
@@ -254,21 +262,21 @@ namespace VismasMeetings.Models
             if (selected != null)
             {
                 Console.WriteLine(
-                    "Members: {0}\n" +
+                    "Participants: {0}\n" +
                     "Responsible person: {1}\n" +
                     "Description: {2}\n" +
                     "Category: {3}\n" +
                     "Meeting type: {4}\n" +
                     "Start date: {5}\n" +
                     "End date: {6}\n\n",
-                    selected.PrintMeeting(), selected.responsiblePerson, selected.description, selected.category, selected.type, selected.startDate, selected.endDate);
+                    selected.PrintMember(), selected.responsiblePerson, selected.description, selected.category, selected.type, selected.startDate, selected.endDate);
 
                 Console.WriteLine("This meeting? Y/n\n");
                 string userInput = Console.ReadLine();
 
                 if (userInput == "y" || userInput == "Y")
                 {
-                    Console.WriteLine("Enter number which one to detele (0,1,2,3)\n");
+                    Console.WriteLine("Enter number which one to detele (0,1,2,3...)\n");
                     string inputPerson = Console.ReadLine();
                     selected.RemovePersonFromMeeting(inputPerson);
 

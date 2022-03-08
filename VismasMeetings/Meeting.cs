@@ -17,7 +17,7 @@ namespace VismasMeetings.Models
 		public static void PrintAllMeetings(List<Meeting> meetings)
 		{
 			meetings.ForEach(x => Console.WriteLine(
-								"Members: {0}\n" +
+								"Participants: {0}\n" +
 								"Responsible person: {1}\n" +
 								"Description: {2}\n" +
 								"Category: {3}\n" +
@@ -25,9 +25,9 @@ namespace VismasMeetings.Models
 								"Start date: {5}\n" +
 								"End date: {6} \n" +
 								"**************************************",
-								x.PrintMeeting(), x.responsiblePerson, x.description, x.category, x.type, x.startDate, x.endDate));
+								x.PrintMember(), x.responsiblePerson, x.description, x.category, x.type, x.startDate, x.endDate));
 		}
-		public string PrintMeeting()
+		public string PrintMember()
 		{
 			var b = new StringBuilder();
 			people.ForEach(x => b.Append(x + ","));

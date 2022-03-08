@@ -24,7 +24,7 @@
             {
                 List<Person> auth = Program.users;
 
-                var loginAuth = auth.FirstOrDefault(p => p.name == loginName && p.password == password).ToString();
+                    var loginAuth = auth.FirstOrDefault(p => p.name == loginName && p.password == password).ToString();
                 if (loginAuth != null)
                 {
                     Console.Clear();
