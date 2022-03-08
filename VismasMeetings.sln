@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VismasMeetings", "VismasMeetings\VismasMeetings.csproj", "{4499A878-7CE0-43BC-9AA0-BA2F019E01BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4499A878-7CE0-43BC-9AA0-BA2F019E01BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4499A878-7CE0-43BC-9AA0-BA2F019E01BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4499A878-7CE0-43BC-9AA0-BA2F019E01BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4499A878-7CE0-43BC-9AA0-BA2F019E01BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D49216C0-A9A6-4CB3-807C-6B74C00E4CD3}
+	EndGlobalSection
+EndGlobal
